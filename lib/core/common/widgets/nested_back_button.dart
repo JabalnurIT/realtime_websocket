@@ -12,7 +12,6 @@ class NestedBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (_) => context.pop(),
       child: IconButton(
         color: Colours.secondaryColour,
         iconSize: 30,

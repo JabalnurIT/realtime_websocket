@@ -1,7 +1,6 @@
 import 'package:provider/provider.dart';
 
 import 'core/common/app/providers/file_provider.dart';
-import 'core/common/app/providers/user_provider.dart';
 import 'core/services/injection_container.dart';
 import 'package:flutter/material.dart';
 
@@ -23,13 +22,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => UserProvider()),
         ChangeNotifierProvider(create: (_) => FileProvider()),
         ChangeNotifierProvider(create: (_) => DashboardController())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Clean Arch - TDD',
+        title: 'Realtime Websocket',
         theme: ThemeData(
           useMaterial3: true,
           visualDensity: VisualDensity.adaptivePlatformDensity,

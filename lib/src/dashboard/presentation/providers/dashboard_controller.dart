@@ -17,60 +17,7 @@ class DashboardController extends ChangeNotifier {
   int get currentIndex => _currentIndex;
 
   void getScreens(String role) {
-    if (role == 'employee') {
-      _screens = [
-        ChangeNotifierProvider(
-            create: (_) => TabNavigator(
-                  TabItem(
-                    child: const Placeholder(),
-                  ),
-                ),
-            child: const PersistentView()),
-        ChangeNotifierProvider(
-            create: (_) => TabNavigator(
-                  TabItem(
-                    child: const Placeholder(),
-                  ),
-                ),
-            child: const PersistentView()),
-      ];
-    } else if (role == 'agent') {
-      _screens = [
-        ChangeNotifierProvider(
-            create: (_) => TabNavigator(
-                  TabItem(
-                    child: const Placeholder(),
-                  ),
-                ),
-            child: const PersistentView()),
-        ChangeNotifierProvider(
-            create: (_) => TabNavigator(
-                  TabItem(
-                    child: const Placeholder(),
-                  ),
-                ),
-            child: const PersistentView()),
-      ];
-    } else if (role == 'security') {
-      _screens = [
-        ChangeNotifierProvider(
-            create: (_) => TabNavigator(
-                  TabItem(
-                    child: const Placeholder(),
-                  ),
-                ),
-            child: const PersistentView()),
-        ChangeNotifierProvider(
-            create: (_) => TabNavigator(
-                  TabItem(
-                    child: const Placeholder(),
-                  ),
-                ),
-            child: const PersistentView()),
-      ];
-    }
-
-    screens.add(
+    _screens = [
       ChangeNotifierProvider(
           create: (_) => TabNavigator(
                 TabItem(
@@ -78,7 +25,14 @@ class DashboardController extends ChangeNotifier {
                 ),
               ),
           child: const PersistentView()),
-    );
+      ChangeNotifierProvider(
+          create: (_) => TabNavigator(
+                TabItem(
+                  child: const Placeholder(),
+                ),
+              ),
+          child: const PersistentView()),
+    ];
   }
 
   void changeIndex(int index) {
