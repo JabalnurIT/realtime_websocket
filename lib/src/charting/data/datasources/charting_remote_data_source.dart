@@ -43,6 +43,10 @@ class ChartingRemoteDataSourceImpl implements ChartingRemoteDataSource {
           }
           print('event: $event');
         }
+      }, onError: (e) async {
+        print('error: $e');
+        await channel.sink.close(status.goingAway);
+        await streamController.close();
       });
     } on ServerException {
       rethrow;
