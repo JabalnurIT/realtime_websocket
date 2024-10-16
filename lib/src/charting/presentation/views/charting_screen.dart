@@ -96,13 +96,17 @@ class ChartingScreenState extends State<ChartingScreen> {
                                   for (int i = 0;
                                       i < chartProvider.charts.length;
                                       i++) {
-                                    chartProvider.removeAt(
-                                        chartProvider.tickerCodes[i], 0);
-                                    _chartSeriesControllers[i]
-                                        ?.updateDataSource(
-                                      addedDataIndex: length - 1,
-                                      removedDataIndex: 0,
-                                    );
+                                    try {
+                                      chartProvider.removeAt(
+                                          chartProvider.tickerCodes[i], 0);
+                                      _chartSeriesControllers[i]
+                                          ?.updateDataSource(
+                                        addedDataIndex: length - 1,
+                                        removedDataIndex: 0,
+                                      );
+                                    } catch (e) {
+                                      print(e);
+                                    }
                                   }
                                 }
                               }
