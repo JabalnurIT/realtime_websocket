@@ -5,6 +5,7 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:web_socket_channel/status.dart' as status;
 
 import '../../../../core/errors/exceptions.dart';
+import '../../../../core/utils/constanst.dart';
 import '../models/chart_model.dart';
 
 abstract class ChartingRemoteDataSource {
@@ -23,8 +24,7 @@ class ChartingRemoteDataSourceImpl implements ChartingRemoteDataSource {
     required StreamController<dynamic> streamController,
   }) async {
     try {
-      final wsUrl =
-          Uri.parse('wss://ws.eodhistoricaldata.com/ws/crypto?api_token=demo');
+      final wsUrl = Uri.parse(kWsHost);
       final channel = WebSocketChannel.connect(wsUrl);
 
       await channel.ready;

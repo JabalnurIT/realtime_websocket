@@ -1,8 +1,2 @@
-const kAppName = "PortPass-Mobile";
-
-const kDefaultAvatar =
-    'https://images.freeimages.com/fic/images/icons/573/must_have/256/user.png';
-
-const kBaseUrl = "https://portpass.iwandp.my.id";
-const kHost = "$kBaseUrl/api";
-// const kHost = "portpass.iwandp.my.id/api";
+const kBaseWsUrl = 'wss://ws.eodhistoricaldata.com/ws';
+const kWsHost = "$kBaseWsUrl/crypto?api_token=demo";
