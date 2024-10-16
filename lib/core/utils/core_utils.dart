@@ -63,4 +63,28 @@ class CoreUtils {
     }
     return uriBase64;
   }
+
+  static DateTime timestampToDateTime(String timestamp) {
+    final int timestampInt = int.parse(timestamp);
+    return DateTime.fromMillisecondsSinceEpoch(timestampInt);
+  }
+
+  static String timestampToSecond(String timestamp) {
+    final int timestampInt = int.parse(timestamp);
+    return (timestampInt / 1000).toStringAsFixed(0);
+  }
+
+  // timestamp to time (hh:mm:ss)
+  static String timestampToTime(String timestamp) {
+    final int timestampInt = int.parse(timestamp);
+    final DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timestampInt);
+    return '${dateTime.hour}:${dateTime.minute}:${dateTime.second}';
+  }
+
+  // string to dollar currency format
+  static String toCurrencyFormat(double value) {
+    final String result = value.toStringAsFixed(2).replaceAllMapped(
+        RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},');
+    return '\$$result';
+  }
 }

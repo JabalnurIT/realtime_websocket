@@ -1,6 +1,6 @@
 import 'package:provider/provider.dart';
 
-import 'core/common/app/providers/file_provider.dart';
+import 'core/common/app/providers/chart_provider.dart';
 import 'core/services/injection_container.dart';
 import 'package:flutter/material.dart';
 
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => FileProvider()),
-        ChangeNotifierProvider(create: (_) => DashboardController())
+        ChangeNotifierProvider(create: (_) => DashboardController()),
+        ChangeNotifierProvider(create: (_) => ChartProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

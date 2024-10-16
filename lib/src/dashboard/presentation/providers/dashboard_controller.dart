@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/common/app/providers/tab_navigator.dart';
 import '../../../../core/common/views/persistent_view.dart';
+import '../../../../core/services/injection_container.dart';
+import '../../../charting/presentation/bloc/charting_bloc.dart';
+import '../../../charting/presentation/views/charting_screen.dart';
+import '../../../charting/presentation/views/table_screen.dart';
 
 class DashboardController extends ChangeNotifier {
   List<int> _indexHistory = [0];
@@ -16,19 +21,25 @@ class DashboardController extends ChangeNotifier {
 
   int get currentIndex => _currentIndex;
 
-  void getScreens(String role) {
+  void getScreens() {
     _screens = [
       ChangeNotifierProvider(
           create: (_) => TabNavigator(
                 TabItem(
-                  child: const Placeholder(),
+                  child: BlocProvider(
+                    create: (_) => sl<ChartingBloc>(),
+                    child: const ChartingScreen(),
+                  ),
                 ),
               ),
           child: const PersistentView()),
       ChangeNotifierProvider(
           create: (_) => TabNavigator(
                 TabItem(
-                  child: const Placeholder(),
+                  child: BlocProvider(
+                    create: (_) => sl<ChartingBloc>(),
+                    child: const TableScreen(),
+                  ),
                 ),
               ),
           child: const PersistentView()),

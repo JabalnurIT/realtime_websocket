@@ -16,7 +16,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
     default:
       return _pageBuilder(
-        (_) => const PageUnderConstruction(),
+        (_) => const SplashScreen(),
         settings: settings,
       );
   }

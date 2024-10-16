@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../src/dashboard/presentation/providers/dashboard_controller.dart';
-import '../common/app/providers/file_provider.dart';
+import '../common/app/providers/chart_provider.dart';
 import '../common/app/providers/tab_navigator.dart';
 
 extension ContextExtensions on BuildContext {
@@ -14,9 +14,9 @@ extension ContextExtensions on BuildContext {
   double get width => size.width;
   double get height => size.height;
 
-  FileProvider get fileProvider => read<FileProvider>();
-
   TabNavigator get tabNavigator => read<TabNavigator>();
+
+  ChartProvider get chartProvider => read<ChartProvider>();
 
   void pop() => tabNavigator.pop();
 
