@@ -54,4 +54,4 @@ This repository contains a Flutter project that demonstrates how to use Websocke
 <img src="https://github.com/user-attachments/assets/9fb2ff07-97af-451c-83d0-400985c0b869" width="200"/>
 
 ### Credits
-This template is created by Jabalnur.
+The project is created by Jabalnur.
