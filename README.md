@@ -6,8 +6,8 @@ This repository contains a Flutter project that demonstrates how to use Websocke
 ## My Flutter Environment
 
 - **Flutter Version:** 3.24.0
-- **Dart Version:** 2.18.0
-- **Kotlin Version:** 1.9.2
+- **Dart Version:** 3.5.0
+- **Kotlin Version:** 1.7.10
 - **Android SDK:** 34
 - **iOS SDK:** 16.0
 
