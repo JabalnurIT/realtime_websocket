@@ -8,11 +8,11 @@ class TableWidget extends StatelessWidget {
   const TableWidget({
     super.key,
     required this.tickerCodes,
-    required this.mapCharts,
+    required this.tablesValue,
   });
 
   final List<String> tickerCodes;
-  final Map<String, List<Chart>> mapCharts;
+  final Map<String, Chart> tablesValue;
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +69,7 @@ class TableWidget extends StatelessWidget {
             DataCell(
               Text(
                 tickerCodes[index],
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -77,32 +77,32 @@ class TableWidget extends StatelessWidget {
             DataCell(
               Text(
                 CoreUtils.toCurrencyFormat(
-                    mapCharts[tickerCodes[index]]?.last.lastPrice ?? 0.0),
+                    tablesValue[tickerCodes[index]]?.lastPrice ?? 0.0),
               ),
             ),
             DataCell(
               Text(
-                (mapCharts[tickerCodes[index]]?.last.dailyDiffPrice ?? 0.0)
+                (tablesValue[tickerCodes[index]]?.dailyDiffPrice ?? 0.0)
                     .toStringAsFixed(2),
                 textAlign: TextAlign.right,
                 style: TextStyle(
-                  color: (mapCharts[tickerCodes[index]]?.last.dailyDiffPrice ??
-                              0.0) >
-                          0
-                      ? Colors.green
-                      : Colors.red,
+                  color:
+                      (tablesValue[tickerCodes[index]]?.dailyDiffPrice ?? 0.0) >
+                              0
+                          ? Colors.green
+                          : Colors.red,
                 ),
               ),
             ),
             DataCell(
               Text(
-                "${(mapCharts[tickerCodes[index]]?.last.dailyChangePercent ?? 0.0).toStringAsFixed(2)}%",
+                "${(tablesValue[tickerCodes[index]]?.dailyChangePercent ?? 0.0).toStringAsFixed(2)}%",
                 style: TextStyle(
-                  color: (mapCharts[tickerCodes[index]]?.last.dailyDiffPrice ??
-                              0.0) >
-                          0
-                      ? Colors.green
-                      : Colors.red,
+                  color:
+                      (tablesValue[tickerCodes[index]]?.dailyDiffPrice ?? 0.0) >
+                              0
+                          ? Colors.green
+                          : Colors.red,
                 ),
               ),
             ),

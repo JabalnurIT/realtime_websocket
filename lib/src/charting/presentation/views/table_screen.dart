@@ -28,7 +28,7 @@ class TableScreenState extends State<TableScreen> {
           child: Consumer<ChartProvider>(builder: (_, chartProvider, __) {
             return TableWidget(
               tickerCodes: chartProvider.tickerCodes,
-              mapCharts: chartProvider.charts,
+              tablesValue: chartProvider.tables,
             );
           }),
         ),

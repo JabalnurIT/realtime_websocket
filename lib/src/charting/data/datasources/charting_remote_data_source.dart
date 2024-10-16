@@ -34,17 +34,14 @@ class ChartingRemoteDataSourceImpl implements ChartingRemoteDataSource {
 
       channel.stream.listen((event) async {
         if (streamController.isClosed) {
-          print("StreamController is closed");
           await channel.sink.close(status.goingAway);
         } else {
           if (event.contains('"s"')) {
             final data = ChartModel.fromMap(jsonDecode(event) as DataMap);
             streamController.add(data);
           }
-          print('event: $event');
         }
       }, onError: (e) async {
-        print('error: $e');
         await channel.sink.close(status.goingAway);
         await streamController.close();
       });

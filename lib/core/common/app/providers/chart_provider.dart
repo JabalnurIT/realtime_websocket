@@ -33,6 +33,8 @@ class ChartProvider extends ChangeNotifier {
 
   int addChart(Chart chart) {
     if (_charts.containsKey(chart.tickerCode)) {
+      _tables[chart.tickerCode] = chart;
+      Future.delayed(Duration.zero, (() => notifyListeners()));
       if (_charts[chart.tickerCode]!.any((element) =>
           CoreUtils.timestampToSecond(element.timestamp) ==
           CoreUtils.timestampToSecond(chart.timestamp))) {
@@ -62,6 +64,10 @@ class ChartProvider extends ChangeNotifier {
     clearTickerCodes();
     notifyListeners();
   }
+
+  final Map<String, Chart> _tables = {};
+
+  Map<String, Chart> get tables => _tables;
 
   // List<Chart> get charts => _charts;
 

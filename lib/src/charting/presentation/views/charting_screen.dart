@@ -60,8 +60,6 @@ class ChartingScreenState extends State<ChartingScreen> {
           CoreUtils.showSnackBar(context, 'Fetching Stopped');
           context.chartProvider.clearCharts();
           _chartSeriesControllers.clear();
-
-          print(_streamController.isClosed);
           _streamController.close();
         }
       },
@@ -105,7 +103,7 @@ class ChartingScreenState extends State<ChartingScreen> {
                                         removedDataIndex: 0,
                                       );
                                     } catch (e) {
-                                      print(e);
+                                      debugPrint(e.toString());
                                     }
                                   }
                                 }
@@ -242,7 +240,6 @@ class ChartingScreenState extends State<ChartingScreen> {
                             child: ElevatedButton(
                               onPressed: () {
                                 _initStream();
-                                print("stream");
                                 context
                                     .read<ChartingBloc>()
                                     .add(StreamChartValuesEvent(
