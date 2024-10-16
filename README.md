@@ -38,7 +38,7 @@ This repository contains a Flutter project that demonstrates how to use Websocke
 
 ## Tech
 1. **Domain Driven Design (DDD):** This project is structured using the Domain Driven Design (DDD) architecture.
-2. **Websocket:** The project uses the Websocket package to create a realtime chat application.
+2. **Websocket:** The project uses the Websocket package to create a realtime application.
 3. **Provider:** The project uses the Provider package for state management.
 4. **BLoC:** The project uses the BLoC pattern for managing the business logic.
 5. **Test Driven Development (TDD):** The project uses the Test Driven Development (TDD) approach to write tests before writing the actual code.
