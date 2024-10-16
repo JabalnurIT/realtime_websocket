@@ -1,6 +1,7 @@
 ## Project: "Realtime Websocket Flutter"
 
-This repository contains a Flutter project that demonstrates how to use Websocket in Flutter to create a realtime chat application.
+This repository contains a Flutter project that demonstrates how to use Websocket in Flutter to create a realtime data socket application from EODHD website.
+
 
 ## My Flutter Environment
 
@@ -42,8 +43,15 @@ This repository contains a Flutter project that demonstrates how to use Websocke
 4. **BLoC:** The project uses the BLoC pattern for managing the business logic.
 5. **Test Driven Development (TDD):** The project uses the Test Driven Development (TDD) approach to write tests before writing the actual code.
 
+## Websocket
+1. **Name:** OEDHD
+2. **URL:** wss://ws.eodhistoricaldata.com/ws/crypto?api_token=demo
+3. **Request:** {"action": "subscribe", "symbols": "ETH-USD,BTC-USD"}
 
 ## Screenshots
+<img src="https://github.com/user-attachments/assets/9d4e5ad7-da0f-415d-b14d-a5efa15fc47a" width="200"/>
+<img src="https://github.com/user-attachments/assets/b9d74513-f1c0-445a-914f-233807fa1e77" width="200"/>
+<img src="https://github.com/user-attachments/assets/9fb2ff07-97af-451c-83d0-400985c0b869" width="200"/>
 
 ### Credits
 This template is created by Jabalnur.
