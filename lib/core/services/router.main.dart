@@ -4,7 +4,36 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case SplashScreen.routeName:
       return _pageBuilder(
-        (_) => const SplashScreen(),
+        (_) => BlocProvider(
+          create: (_) => sl<AuthBloc>(),
+          child: const SplashScreen(),
+        ),
+        settings: settings,
+      );
+
+    case SignInScreen.routeName:
+      return _pageBuilder(
+        (_) => BlocProvider(
+          create: (_) => sl<AuthBloc>(),
+          child: const SignInScreen(),
+        ),
+        settings: settings,
+      );
+    case OtpScreen.routeName:
+      return _pageBuilder(
+        (_) => BlocProvider(
+          create: (_) => sl<AuthBloc>(),
+          child: const OtpScreen(),
+        ),
+        settings: settings,
+      );
+
+    case QrcodeGeneratedScreen.routeName:
+      return _pageBuilder(
+        (_) => BlocProvider(
+          create: (_) => sl<QrcodeBloc>(),
+          child: const QrcodeGeneratedScreen(),
+        ),
         settings: settings,
       );
 
@@ -16,7 +45,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
     default:
       return _pageBuilder(
-        (_) => const SplashScreen(),
+        (_) => BlocProvider(
+          create: (_) => sl<AuthBloc>(),
+          child: const SplashScreen(),
+        ),
         settings: settings,
       );
   }

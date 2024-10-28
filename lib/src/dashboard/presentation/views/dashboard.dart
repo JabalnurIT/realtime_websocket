@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/res/colours.dart';
+import '../../../../core/res/text_localization.dart';
 import '../providers/dashboard_controller.dart';
 
 class Dashboard extends StatefulWidget {
@@ -17,12 +18,12 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   @override
   void initState() {
+    super.initState();
     context.read<DashboardController>().getScreens();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    super.initState();
   }
 
   @override
@@ -35,7 +36,6 @@ class _DashboardState extends State<Dashboard> {
         ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
-            color: Colours.secondaryColour,
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(1),
@@ -45,66 +45,147 @@ class _DashboardState extends State<Dashboard> {
               ),
             ],
           ),
-          child: SafeArea(
-            child: BottomNavigationBar(
-              currentIndex: controller.currentIndex,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              onTap: controller.changeIndex,
-              items: [
-                BottomNavigationBarItem(
-                  icon: Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        top: BorderSide(
-                          color: controller.currentIndex == 0
-                              ? Colours.accentColour
-                              : Colors.transparent,
-                          width: 5.0,
-                        ),
-                      ),
-                    ),
-                    padding:
-                        const EdgeInsets.only(top: 10, left: 20, right: 20),
-                    child: Icon(
-                      Icons.bar_chart,
-                      size: 32,
-                      color: controller.currentIndex == 0
-                          ? Colours.accentColour
-                          : Colors.grey,
-                    ),
-                  ),
-                  label: 'Chart',
-                ),
-                BottomNavigationBarItem(
-                  icon: Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        top: BorderSide(
-                          color: controller.currentIndex == 1
-                              ? Colours.accentColour
-                              : Colors.transparent,
-                          width: 5.0,
-                        ),
-                      ),
-                    ),
-                    padding:
-                        const EdgeInsets.only(top: 10, left: 20, right: 20),
-                    child: Icon(
-                      Icons.data_exploration,
-                      size: 32,
-                      color: controller.currentIndex == 1
-                          ? Colours.accentColour
-                          : Colors.grey,
-                    ),
-                  ),
-                  label: 'Watchlist',
-                  backgroundColor: Colors.white,
-                ),
-              ],
+          child: BottomNavigationBar(
+            currentIndex: controller.currentIndex,
+            type: BottomNavigationBarType.fixed,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            selectedItemColor: Colours.btnActiveColour,
+            unselectedItemColor: Colours.btnDisabledColour,
+            selectedFontSize: 14,
+            unselectedFontSize: 14,
+            selectedLabelStyle: const TextStyle(
+              fontWeight: FontWeight.w600,
             ),
+            unselectedLabelStyle: const TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
+            backgroundColor: Colours.baseColour10,
+            elevation: 0,
+            onTap: controller.changeIndex,
+            items: [
+              BottomNavigationBarItem(
+                icon: Column(
+                  children: [
+                    Icon(
+                      Icons.home_outlined,
+                      color: controller.currentIndex == 0
+                          ? Colours.btnActiveColour
+                          : Colours.btnDisabledColour,
+                    ),
+                    Text(
+                      Tz.getDashboardText(DashboardText.dashboard),
+                      style: TextStyle(
+                        color: controller.currentIndex == 0
+                            ? Colours.btnActiveColour
+                            : Colours.btnDisabledColour,
+                      ),
+                    ),
+                  ],
+                ),
+                label: Tz.getDashboardText(DashboardText.dashboard),
+                backgroundColor: Colours.baseColour10,
+              ),
+              BottomNavigationBarItem(
+                icon: Column(
+                  children: [
+                    Icon(
+                      Icons.compare_arrows_sharp,
+                      color: controller.currentIndex == 1
+                          ? Colours.btnActiveColour
+                          : Colours.btnDisabledColour,
+                    ),
+                    Text(
+                      Tz.getDashboardText(DashboardText.transaction),
+                      style: TextStyle(
+                        color: controller.currentIndex == 1
+                            ? Colours.btnActiveColour
+                            : Colours.btnDisabledColour,
+                      ),
+                    ),
+                  ],
+                ),
+                label: Tz.getDashboardText(DashboardText.transaction),
+                backgroundColor: Colours.baseColour10,
+              ),
+              BottomNavigationBarItem(
+                icon: Transform.translate(
+                  offset: const Offset(0, -12),
+                  child: Column(
+                    children: [
+                      Transform.translate(
+                        offset: const Offset(0, -18),
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Colours.btnActiveColour,
+                            shape: BoxShape.circle,
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: const Icon(
+                            Icons.qr_code,
+                            color: Colours.baseColour10,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        Tz.getDashboardText(DashboardText.qris),
+                        style: TextStyle(
+                          color: controller.currentIndex == 2
+                              ? Colours.btnActiveColour
+                              : Colours.btnDisabledColour,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                label: Tz.getDashboardText(DashboardText.qris),
+                backgroundColor: Colours.baseColour10,
+              ),
+              BottomNavigationBarItem(
+                icon: Column(
+                  children: [
+                    Icon(
+                      Icons.account_balance_wallet_outlined,
+                      color: controller.currentIndex == 3
+                          ? Colours.btnActiveColour
+                          : Colours.btnDisabledColour,
+                    ),
+                    Text(
+                      Tz.getDashboardText(DashboardText.settlement),
+                      style: TextStyle(
+                        color: controller.currentIndex == 3
+                            ? Colours.btnActiveColour
+                            : Colours.btnDisabledColour,
+                      ),
+                    ),
+                  ],
+                ),
+                label: Tz.getDashboardText(DashboardText.settlement),
+                backgroundColor: Colours.baseColour10,
+              ),
+              BottomNavigationBarItem(
+                icon: Column(
+                  children: [
+                    Icon(
+                      Icons.person_outline,
+                      color: controller.currentIndex == 4
+                          ? Colours.btnActiveColour
+                          : Colours.btnDisabledColour,
+                    ),
+                    Text(
+                      Tz.getDashboardText(DashboardText.profile),
+                      style: TextStyle(
+                        color: controller.currentIndex == 4
+                            ? Colours.btnActiveColour
+                            : Colours.btnDisabledColour,
+                      ),
+                    ),
+                  ],
+                ),
+                label: Tz.getDashboardText(DashboardText.profile),
+                backgroundColor: Colours.baseColour10,
+              ),
+            ],
           ),
         ),
       );

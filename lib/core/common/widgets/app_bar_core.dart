@@ -34,8 +34,8 @@ class AppBarCore extends StatelessWidget implements PreferredSizeWidget {
             : const SizedBox.shrink(),
       ],
       centerTitle: centerTitle,
-      backgroundColor: Colours.primaryColour,
-      foregroundColor: Colours.accentColour,
+      backgroundColor: Colours.backgroundColour,
+      foregroundColor: Colours.primaryColour,
       elevation: 0,
       leading: isBackButton == true
           ? IconButton(
@@ -46,16 +46,17 @@ class AppBarCore extends StatelessWidget implements PreferredSizeWidget {
               ),
               onPressed: () {
                 Navigator.pop(context);
+                FocusScope.of(context).unfocus();
                 onPressed?.call();
               },
-              color: Colors.white,
+              color: Colours.txtDarkColour,
               iconSize: 30,
             )
           : const SizedBox.shrink(),
       title: Text(
         title,
         style: TextStyle(
-          color: Colors.white,
+          color: Colours.txtDarkColour,
           fontSize: size,
           fontWeight: FontWeight.w700,
         ),

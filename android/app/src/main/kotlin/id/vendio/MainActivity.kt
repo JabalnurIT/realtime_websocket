@@ -1,4 +1,4 @@
-package com.jibi.realtime_websocket_flutter
+package id.vendio
 
 import io.flutter.embedding.android.FlutterActivity
 

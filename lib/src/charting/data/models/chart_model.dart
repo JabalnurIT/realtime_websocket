@@ -76,3 +76,68 @@ class ChartModel extends Chart {
           timestamp: entity.timestamp,
         );
 }
+
+extension TimestampExtension on ChartModel {
+  ChartModel toSeconds() {
+    return copyWith(
+      id: (int.parse(id) ~/ 1000).toString(),
+      timestamp: (int.parse(timestamp) ~/ 1000).toString(),
+    );
+  }
+
+  ChartModel toMinutes() {
+    return copyWith(
+      id: (int.parse(id) ~/ 60000).toString(),
+      timestamp: (int.parse(timestamp) ~/ 60000).toString(),
+    );
+  }
+
+  ChartModel toHours() {
+    return copyWith(
+      id: (int.parse(id) ~/ 3600000).toString(),
+      timestamp: (int.parse(timestamp) ~/ 3600000).toString(),
+    );
+  }
+
+  ChartModel toDays() {
+    return copyWith(
+      id: (int.parse(id) ~/ 86400000).toString(),
+      timestamp: (int.parse(timestamp) ~/ 86400000).toString(),
+    );
+  }
+
+  ChartModel toWeeks() {
+    return copyWith(
+      id: (int.parse(id) ~/ (86400000 * 7)).toString(),
+      timestamp: (int.parse(timestamp) ~/ (86400000 * 7)).toString(),
+    );
+  }
+
+  ChartModel toMonths() {
+    return copyWith(
+      id: (int.parse(id) ~/ (86400000 * 30)).toString(),
+      timestamp: (int.parse(timestamp) ~/ (86400000 * 30)).toString(),
+    );
+  }
+
+  ChartModel toThreeMonths() {
+    return copyWith(
+      id: (int.parse(id) ~/ (86400000 * 90)).toString(),
+      timestamp: (int.parse(timestamp) ~/ (86400000 * 90)).toString(),
+    );
+  }
+
+  ChartModel toSixMonths() {
+    return copyWith(
+      id: (int.parse(id) ~/ (86400000 * 180)).toString(),
+      timestamp: (int.parse(timestamp) ~/ (86400000 * 180)).toString(),
+    );
+  }
+
+  ChartModel toYears() {
+    return copyWith(
+      id: (int.parse(id) ~/ (86400000 * 365)).toString(),
+      timestamp: (int.parse(timestamp) ~/ (86400000 * 365)).toString(),
+    );
+  }
+}

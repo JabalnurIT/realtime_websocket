@@ -3,5 +3,7 @@ icons_launcher:
   platforms:
     android:
       enable: true
+      adaptive_background_color: '#D1D5DC'
+      adaptive_foreground_image: "assets/icons/appicon.png"
     ios:
       enable: true

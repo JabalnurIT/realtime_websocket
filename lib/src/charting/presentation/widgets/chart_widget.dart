@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:realtime_websocket_flutter/core/utils/core_utils.dart';
+import 'package:vendio_id/core/utils/core_utils.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../../../core/res/colours.dart';

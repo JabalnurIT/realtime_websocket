@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:realtime_websocket_flutter/src/charting/domain/usecases/stream_chart_values.dart';
+import 'package:vendio_id/src/charting/domain/usecases/stream_chart_values.dart';
 
 part 'charting_event.dart';
 part 'charting_state.dart';

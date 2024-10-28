@@ -8,6 +8,8 @@ class MediaRes {
 
   // Icons
   static const appIcon = '$_baseIcons/appicon.png';
+  static const appIconName = '$_baseIcons/appicon_name.png';
+  static const appIconTag = '$_baseIcons/appicon_tag.png';
 
   // Backgrounds
   static const defaultBackground = '$_baseImages/background.png';
@@ -16,6 +18,8 @@ class MediaRes {
 
   // Objects
   static const itemExample = '$_baseImages/item_example.png';
+  static const dummyQrStatis = '$_baseImages/dummy_qr_statis.png';
+  static const dummyQrDynamic = '$_baseImages/dummy_qr_dynamic.png';
 
   // Logo
   static const noProfilePicture = '$_baseImages/no_profile_picture.png';

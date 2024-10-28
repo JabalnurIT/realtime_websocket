@@ -1,6 +1,7 @@
 import 'package:provider/provider.dart';
 
 import 'core/common/app/providers/chart_provider.dart';
+import 'core/common/app/providers/qrcode_provider.dart';
 import 'core/services/injection_container.dart';
 import 'package:flutter/material.dart';
 
@@ -24,10 +25,11 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => DashboardController()),
         ChangeNotifierProvider(create: (_) => ChartProvider()),
+        ChangeNotifierProvider(create: (_) => QrcodeProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Realtime Websocket',
+        title: 'Vendio',
         theme: ThemeData(
           useMaterial3: true,
           visualDensity: VisualDensity.adaptivePlatformDensity,

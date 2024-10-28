@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:realtime_websocket_flutter/core/utils/typedef.dart';
-import 'package:realtime_websocket_flutter/src/charting/data/models/chart_model.dart';
-import 'package:realtime_websocket_flutter/src/charting/domain/entities/chart.dart';
+import 'package:vendio_id/core/utils/typedef.dart';
+import 'package:vendio_id/src/charting/data/models/chart_model.dart';
+import 'package:vendio_id/src/charting/domain/entities/chart.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
 

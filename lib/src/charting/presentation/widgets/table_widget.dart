@@ -1,7 +1,7 @@
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
-import 'package:realtime_websocket_flutter/core/utils/core_utils.dart';
-import 'package:realtime_websocket_flutter/src/charting/domain/entities/chart.dart';
+import 'package:vendio_id/core/utils/core_utils.dart';
+import 'package:vendio_id/src/charting/domain/entities/chart.dart';
 
 /// Example without a datasource
 class TableWidget extends StatelessWidget {

@@ -1,4 +1,4 @@
-name: realtime_websocket_flutter
+name: vendio_id
 description: A flutter project for realtime websocket connection
 publish_to: "none"
 
@@ -25,7 +25,7 @@ dependencies:
   iconly: ^1.0.1
   dio: ^5.3.3
   uuid: ^4.2.1
-  flutter_svg: ^2.0.9
+  flutter_svg: ^2.0.10+1
   timeline_tile: ^2.0.0
   change_app_package_name: ^1.4.0
   rename_app: ^1.6.1
@@ -36,6 +36,7 @@ dependencies:
   syncfusion_flutter_charts: ^27.1.53
   data_table_2: ^2.5.15
   intl: ^0.19.0
+  chart_sparkline: ^1.1.1
 
 dev_dependencies:
   flutter_test:

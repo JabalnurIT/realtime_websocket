@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:realtime_websocket_flutter/core/utils/typedef.dart';
+import 'package:vendio_id/core/utils/typedef.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:web_socket_channel/status.dart' as status;
 

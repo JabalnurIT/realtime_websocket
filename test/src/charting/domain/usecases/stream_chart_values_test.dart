@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:realtime_websocket_flutter/src/charting/domain/repositories/charting_repository.dart';
-import 'package:realtime_websocket_flutter/src/charting/domain/usecases/stream_chart_values.dart';
+import 'package:vendio_id/src/charting/domain/repositories/charting_repository.dart';
+import 'package:vendio_id/src/charting/domain/usecases/stream_chart_values.dart';
 
 import 'charting_repository.mock.dart';
 

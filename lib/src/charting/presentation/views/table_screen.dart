@@ -1,5 +1,5 @@
 import 'package:provider/provider.dart';
-import 'package:realtime_websocket_flutter/core/common/app/providers/chart_provider.dart';
+import 'package:vendio_id/core/common/app/providers/chart_provider.dart';
 
 import 'package:flutter/material.dart';
 import '../../../../core/common/widgets/app_bar_core.dart';
